@@ -10,6 +10,7 @@ ReactDOM.render(
     <div>
       <FriendMain ageLimit={30} />
       <FriendMain ageLimit={15} />
+      <TimelineMain />
     </div>
   </Provider>,
   document.getElementById("root")

@@ -1,9 +1,9 @@
+import React, { useMemo } from 'react'
 import { getNextFriend } from '../../common/mockData'
 import { addFriend } from '../state';
 import FriendList from '../component/FriendList';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeGetFriendsWithAgeLimit } from "../state/selector";
-import { useMemo } from 'react';
 
 export default function FriendMain({ ageLimit }) {
   const getFriendsWithAgeLimit = useMemo(makeGetFriendsWithAgeLimit, []);
