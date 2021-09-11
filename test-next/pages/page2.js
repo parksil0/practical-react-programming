@@ -1,5 +1,4 @@
 import { callApi } from '../src/api';
-import Router from 'next/router';
 
 Page2.getInitialProps = async ({ query }) => {
   // throw new Error('exception in getInitialProps')
@@ -9,12 +8,18 @@ Page2.getInitialProps = async ({ query }) => {
 };
 
 export default function Page2({ text, data }) {
+  function onClick() {
+    import('../src/sayHello').then(({ sayHello }) => 
+      console.log(sayHello())
+    );
+  }
+
   return (
     <div>
-      <button onClick={() => Router.push('/page1')}>page1로 이동</button>
       <p>this is home page2</p>
       <p>{`text: ${text}`}</p>
       <p>{`data is ${data}`}</p>
+      <button onClick={onClick}>sayHello</button>
     </div>
   )
 }
